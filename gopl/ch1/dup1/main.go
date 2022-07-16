@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
+	fmt.Println("main() : start dup1")
 	counts := make(map[string]int)
 	input := bufio.NewScanner(os.Stdin)
 
@@ -19,4 +20,5 @@ func main() {
 			fmt.Printf("%d\t%s\n", n, line)
 		}
 	}
+	fmt.Println("main() : end dup1")
 }
