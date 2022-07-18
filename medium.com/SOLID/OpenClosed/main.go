@@ -1,11 +1,10 @@
 package main
 
 import (
-	"fmt"
 	"math"
 )
 
-type circle struct {
+/* type circle struct {
 	radius float32
 }
 
@@ -39,4 +38,33 @@ func main() {
 	s := square{sideLen: 2}
 	calc := calculator{}
 	fmt.Println("Total of areas : ", calc.sumAreas(c, s))
+} */
+
+type shape interface {
+	area() float32
+}
+
+type circle struct {
+	radius float32
+}
+
+func (c circle) area() float32 {
+	return math.Pi * c.radius * c.radius
+}
+
+type square struct {
+	sideLen float32
+}
+
+func (s square) area() float32 {
+	return s.sideLen * s.sideLen
+}
+
+type triangle struct {
+	height float32
+	base   float32
+}
+
+func (t triangle) area() float32 {
+	return t.base * t.height / 2
 }
