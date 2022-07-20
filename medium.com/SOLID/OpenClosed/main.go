@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"math"
 )
 
@@ -67,4 +68,27 @@ type triangle struct {
 
 func (t triangle) area() float32 {
 	return t.base * t.height / 2
+}
+
+type calculator struct {
+	//total float32
+}
+
+func (c *calculator) sumAreas(shapes ...shape) float32 {
+	var sum float32
+
+	for _, shape := range shapes {
+		sum += shape.area()
+	}
+	return sum
+}
+
+func main() {
+	c := circle{radius: 5}
+	s := square{sideLen: 2}
+	t := triangle{height: 10, base: 5}
+
+	calculator := calculator{}
+
+	fmt.Println(calculator.sumAreas(c, s, t))
 }
