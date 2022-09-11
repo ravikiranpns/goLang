@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// binarySearch func return true if key to be searched is present else returns false.
 func binarySearch(key int, slc []int) bool {
 	low := 0
 	high := len(slc) - 1
