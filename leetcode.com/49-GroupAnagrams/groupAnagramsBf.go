@@ -3,11 +3,10 @@ package main
 // https://leetcode.com/problems/group-anagrams/
 
 import (
-	"fmt"
 	"strconv"
 )
 
-func groupAnagramsgh(strs []string) [][]string {
+func groupAnagramsBf(strs []string) [][]string {
 	var ans [][]string
 	dict := make(map[string][]string)
 
@@ -28,10 +27,4 @@ func groupAnagramsgh(strs []string) [][]string {
 	}
 
 	return ans
-}
-
-func main() {
-	strs := []string{"eat", "tea", "tan", "ate", "nat", "bat"}
-
-	fmt.Println(groupAnagramsgh(strs))
 }
