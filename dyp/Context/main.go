@@ -1,5 +1,7 @@
 // You can edit this code!
 // Click here and start typing.
+
+// https://dev-yakuza.posstree.com/en/golang/context/
 package main
 
 import (
