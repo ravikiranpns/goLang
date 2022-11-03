@@ -1,5 +1,9 @@
 # goLang
 
+1797600.12.09.22 17.50
+https://www.includehelp.com/golang/
+https://www.includehelp.com/golang/merge-two-arrays-into-third-array.aspx
+
 1731000.21.07.22 22:57
 https://www.systutorials.com/tag/golang/
 
