@@ -1,4 +1,6 @@
 /*
+
+https://gobyexample.com/non-blocking-channel-operations
 Non-Blocking Channel Operations
 -Basic sends and receives on channels are blocking.
 -However, use select with a default clause to implement
