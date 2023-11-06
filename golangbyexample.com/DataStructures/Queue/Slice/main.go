@@ -25,3 +25,12 @@ func (q *sQ) DeQ() error {
 	}
 	return fmt.Errorf("pop Error: Q is empty")
 }
+
+func (q *sQ) Front() (string, error) {
+	if len(q.sliceQ) > 0 {
+		q.lock.Lock()
+		defer q.lock.Unlock()
+		return q.sliceQ[0], nil
+	}
+	return "", fmt.Errorf("peep Error : Q is empty")
+}
