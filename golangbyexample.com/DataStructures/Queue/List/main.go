@@ -38,3 +38,23 @@ func (q *LQ) Size() int {
 func (q *LQ) Empty() bool {
 	return q.lq.Len() == 0
 }
+
+func main() {
+	clq := &LQ{
+		lq: list.New(),
+	}
+
+	fmt.Printf("Enqueue: A\n")
+	clq.Enqueue("A")
+	fmt.Printf("Enqueue: B\n")
+	clq.Enqueue("B")
+	fmt.Printf("Size: %d\n", clq.Size())
+
+	for clq.Size() > 0 {
+		fVal, _ := clq.Front()
+		fmt.Printf("Front: %s\n", fVal)
+		fmt.Printf("Dequeue: %s\n", fVal)
+		clq.Dequeue()
+	}
+	fmt.Printf("Size: %d\n", clq.Size())
+}
