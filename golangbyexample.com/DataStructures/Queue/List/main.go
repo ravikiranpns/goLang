@@ -34,3 +34,7 @@ func (q *LQ) Front() (string, error) {
 func (q *LQ) Size() int {
 	return q.lq.Len()
 }
+
+func (q *LQ) Empty() bool {
+	return q.lq.Len() == 0
+}
