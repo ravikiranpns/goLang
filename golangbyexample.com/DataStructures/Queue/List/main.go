@@ -30,3 +30,7 @@ func (q *LQ) Front() (string, error) {
 	}
 	return "", fmt.Errorf("peep Error: Queue is empty")
 }
+
+func (q *LQ) Size() int {
+	return q.lq.Len()
+}
