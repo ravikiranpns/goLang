@@ -54,4 +54,12 @@ func main() {
 	testSliceQ.EnQ("B")
 	fmt.Printf("Len: %d\n", testSliceQ.Size())
 
+	for testSliceQ.Size() > 0 {
+		fVal, _ := testSliceQ.Front()
+		fmt.Printf("Front: %s\n", fVal)
+		fmt.Printf("DeQ: %s\n", fVal)
+		testSliceQ.DeQ()
+	}
+	fmt.Printf("Len: %d\n", testSliceQ.Size())
+
 }
