@@ -42,3 +42,16 @@ func (q *sQ) Size() int {
 func (q *sQ) Empty() bool {
 	return len(q.sliceQ) == 0
 }
+
+func main() {
+	testSliceQ := &sQ{
+		sliceQ: make([]string, 0),
+	}
+
+	fmt.Printf("EnQ: A\n")
+	testSliceQ.EnQ("A")
+	fmt.Printf("EnQ: B\n")
+	testSliceQ.EnQ("B")
+	fmt.Printf("Len: %d\n", testSliceQ.Size())
+
+}
