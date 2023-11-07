@@ -34,3 +34,11 @@ func (q *sQ) Front() (string, error) {
 	}
 	return "", fmt.Errorf("peep Error : Q is empty")
 }
+
+func (q *sQ) Size() int {
+	return len(q.sliceQ)
+}
+
+func (q *sQ) Empty() bool {
+	return len(q.sliceQ) == 0
+}
