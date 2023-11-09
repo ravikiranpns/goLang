@@ -48,4 +48,12 @@ func main() {
 	fmt.Printf("Push: 2\n")
 	TestLStack.Push(2)
 	fmt.Printf("Size: %d\n", TestLStack.Size())
+
+	for TestLStack.Size() > 0 {
+		fVal, _ := TestLStack.Front()
+		fmt.Printf("Front: %d\n", fVal)
+		fmt.Printf("Pop: %d\n", fVal)
+		TestLStack.Pop()
+	}
+	fmt.Printf("Size: %d\n", TestLStack.Size())
 }
