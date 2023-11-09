@@ -38,3 +38,14 @@ func (s Stack) Size() int {
 func (s Stack) Empty() bool {
 	return s.lstack.Len() == 0
 }
+
+func main() {
+	TestLStack := &Stack{
+		lstack: list.New(),
+	}
+	fmt.Printf("Push: 1\n")
+	TestLStack.Push(1)
+	fmt.Printf("Push: 2\n")
+	TestLStack.Push(2)
+	fmt.Printf("Size: %d\n", TestLStack.Size())
+}
