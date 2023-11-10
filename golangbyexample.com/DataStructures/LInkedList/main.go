@@ -43,3 +43,27 @@ func (s *singleList) Traverse() error {
 	}
 	return nil
 }
+
+func (s *singleList) Size() int {
+	return s.len
+}
+
+func main() {
+	ssl := initList()
+
+	err := ssl.Traverse()
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+	fmt.Printf("AddFront: 1\n")
+	ssl.AddFront(1)
+	fmt.Printf("AddFront: 2\n")
+	ssl.AddFront(2)
+
+	fmt.Printf("Size: %d\n", ssl.Size())
+	err = ssl.Traverse()
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+
+}
