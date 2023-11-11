@@ -65,6 +65,15 @@ func (s *singleList) Size() int {
 	return s.len
 }
 
+func (s *singleList) RemoveFront() error {
+	if s.head == nil {
+		return fmt.Errorf("list is Empty")
+	}
+	s.head = s.head.next
+	s.len--
+	return nil
+}
+
 func main() {
 	ssl := initList()
 
