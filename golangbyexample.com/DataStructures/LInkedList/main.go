@@ -16,7 +16,7 @@ func initList() *singleList {
 	return &singleList{}
 }
 
-func (s *singleList) AddFront(num int) {
+func (s *singleList) AddFront(num int) int {
 	newNode := &node{
 		data: num,
 	}
@@ -28,7 +28,24 @@ func (s *singleList) AddFront(num int) {
 		s.head = newNode
 	}
 	s.len++
-	return
+	return 0
+}
+
+func (s *singleList) AddBack(num int) int {
+	newNode := &node{
+		data: num,
+	}
+	if s.head == nil {
+		s.head = newNode
+	} else {
+		curr := s.head
+		for curr.next != nil {
+			curr = curr.next
+		}
+		curr.next = newNode
+	}
+	s.len++
+	return 0
 }
 
 func (s *singleList) Traverse() error {
@@ -59,6 +76,8 @@ func main() {
 	ssl.AddFront(1)
 	fmt.Printf("AddFront: 2\n")
 	ssl.AddFront(2)
+	fmt.Printf("AddBack: 3\n")
+	ssl.AddBack(3)
 
 	fmt.Printf("Size: %d\n", ssl.Size())
 	err = ssl.Traverse()
