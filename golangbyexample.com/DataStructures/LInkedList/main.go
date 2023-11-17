@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type node struct {
 	data int
@@ -72,6 +74,34 @@ func (s *singleList) RemoveFront() error {
 	s.head = s.head.next
 	s.len--
 	return nil
+}
+
+func (s *singleList) RemoveBack() error {
+	if s.head == nil {
+		return fmt.Errorf("removeBack: List is empty")
+	}
+
+	var prev *node
+	curr := s.head
+	for curr.next != nil {
+		prev = curr
+		curr = curr.next
+	}
+
+	if prev != nil {
+		prev.next = nil
+	} else {
+		s.head = nil
+	}
+	s.len--
+	return nil
+}
+
+func (s *singleList) Front() (int, error) {
+	if s.head == nil {
+		return 0, fmt.Errorf("single List is empty")
+	}
+	return s.head.data, nil
 }
 
 func main() {
