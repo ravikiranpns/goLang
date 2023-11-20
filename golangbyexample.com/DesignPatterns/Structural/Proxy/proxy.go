@@ -6,7 +6,7 @@ type proxy struct {
 	rateLimiter       map[string]int
 }
 
-func NginxProxyServer() *proxy {
+func newNginxProxyServer() *proxy {
 	return &proxy{
 		app:               &application{},
 		maxAllowedRequest: 2,
