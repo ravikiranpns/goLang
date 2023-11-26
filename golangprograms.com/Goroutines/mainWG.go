@@ -10,9 +10,9 @@ import (
 )
 
 // WaitGroup is used to wait for the program to finish goroutines.
-var wg sync.WaitGroup
+var wg1 sync.WaitGroup
 
-func responseSize(url string) {
+func responseSize1(url string) {
 
 	// Schedule the call to WaitGroup's Done to tell goroutine is completed
 	defer wg.Done()
@@ -34,13 +34,13 @@ func responseSize(url string) {
 	fmt.Println("S4: ", len(body))
 }
 
-func main() {
+func wgmain() {
 
 	// Add a count, one for each goroutine.
 
 	wg.Add(2)
-	go responseSize("https://www.golangprograms.com")
-	go responseSize("https://coderwall.com")
+	go responseSize1("https://www.golangprograms.com")
+	go responseSize1("https://coderwall.com")
 	time.Sleep(2 * time.Second)
 
 	wg.Wait()
