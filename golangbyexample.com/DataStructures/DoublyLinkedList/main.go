@@ -83,3 +83,25 @@ func (d *dll) TraverseRev() error {
 func (d *dll) Size() int {
 	return d.len
 }
+
+func main() {
+	dll := initdll()
+
+	dll.AddFront("C")
+	dll.AddFront("B")
+	dll.AddFront("A")
+	dll.AddEnd("D")
+	dll.AddEnd("E")
+
+	fmt.Printf("Size: %d\n", dll.Size())
+
+	err := dll.TraverseFwd()
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+
+	err = dll.TraverseRev()
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+}
