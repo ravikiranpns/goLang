@@ -39,6 +39,8 @@ func mapIterate() {
 
 	keys := getAllKeys(sample)
 	fmt.Println(keys)
+
+	LenofMap()
 }
 
 func getAllKeys(sample map[string]string) []string {
@@ -47,4 +49,14 @@ func getAllKeys(sample map[string]string) []string {
 		keys = append(keys, k)
 	}
 	return keys
+}
+
+func LenofMap() {
+	employeeSal := make(map[string]int)
+
+	employeeSal["Raki"] = 2000
+	employeeSal["shi"] = 1200
+
+	LenofMap := len(employeeSal)
+	fmt.Printf("Lenght of map %d", LenofMap)
 }
