@@ -17,8 +17,25 @@ func containsDup(nums []int) bool {
 	return false
 }
 
+func findDuplicates(arr []int) []int {
+	seen := map[int]bool{}
+	var dups []int
+
+	for i := 0; i < len(arr); i++ {
+		if seen[arr[i]] {
+			dups = append(dups, i)
+		}
+		seen[arr[i]] = true
+	}
+	return dups
+}
+
 func main() {
 
-	arr := []int{1, 2, 3, 4, 1}
+	arr := []int{1, 2, 3, 4, 1, 1}
+	arr1 := []int{1, 2, 3, 3, 4, 5, 5, 6}
 	fmt.Println(containsDup(arr))
+	//fmt.Println(containsDup([]int{1}))
+	fmt.Println(findDuplicates(arr))
+	fmt.Println(findDuplicates(arr1))
 }
