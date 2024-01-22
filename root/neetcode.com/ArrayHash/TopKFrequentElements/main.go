@@ -30,6 +30,6 @@ func topKFreqElements(nums []int, k int) (res []int) {
 }
 
 func main() {
-	nums := []int{1, 1, 2, 3, 4, 3, 4, 3, 3, 2, 2}
+	nums := []int{1, 2, 2}
 	fmt.Println(topKFreqElements(nums, 2))
 }
